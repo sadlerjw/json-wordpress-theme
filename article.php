@@ -21,7 +21,5 @@ $hasTitle = isset( $post->post_title ) && strlen($post->post_title) > 0;
 
 <?php if (!$hasTitle): ?>
 	<div class="date"><div><?php echo  get_the_date() . ' ' . get_the_time(); ?></div></div>
-<?php else: ?>
-	<hr class="articleDivider" />
 <?php endif; ?>
 </div>
