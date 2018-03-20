@@ -1,0 +1,259 @@
+/*
+
+Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #002b36;
+  color: #839496;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #586e75;
+}
+
+/* Solarized Green */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-addition {
+  color: #859900;
+}
+
+/* Solarized Cyan */
+.hljs-number,
+.hljs-string,
+.hljs-meta .hljs-meta-string,
+.hljs-literal,
+.hljs-doctag,
+.hljs-regexp {
+  color: #2aa198;
+}
+
+/* Solarized Blue */
+.hljs-title,
+.hljs-section,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #268bd2;
+}
+
+/* Solarized Yellow */
+.hljs-attribute,
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-class .hljs-title,
+.hljs-type {
+  color: #b58900;
+}
+
+/* Solarized Orange */
+.hljs-symbol,
+.hljs-bullet,
+.hljs-subst,
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-link {
+  color: #cb4b16;
+}
+
+/* Solarized Red */
+.hljs-built_in,
+.hljs-deletion {
+  color: #dc322f;
+}
+
+.hljs-formula {
+  background: #073642;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  margin: 0;
+  color: #333;
+  -webkit-text-size-adjust: 100%;
+}
+a {
+  color: #1ba122;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+strong {
+  font-weight: 600;
+}
+pre,
+code {
+  font-family: 'Source Code Pro', monospace;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+code {
+  background: #EEE;
+  font-weight: 200;
+}
+pre code {
+  font-weight: 400;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 200;
+}
+h1 {
+  font-size: 2em;
+  margin-top: 0.25em;
+  margin-bottom: 0.1em;
+}
+h2 {
+  font-size: 1em;
+  font-weight: 600;
+}
+h2.subtitle {
+  margin-top: -0.2em;
+  margin-bottom: 0.8em;
+}
+h3,
+h4,
+h5 {
+  font-size: 1em;
+  color: grey;
+}
+h3.date,
+h4.date,
+h5.date {
+  margin: 0;
+}
+hr {
+  margin: 1em 9em 1em 9em;
+  border: none;
+  border-top: 1px #ECECEC solid;
+}
+hr.articleDivider {
+  margin: 2em 4em 0 4em;
+  border-top: 1px #CCC solid;
+}
+body {
+  font-size: 1.2em;
+  margin: auto;
+  max-width: 640px;
+  overflow: auto;
+}
+img,
+picture {
+  max-width: 100%;
+}
+#wrapper {
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+@media (max-width: 500px) {
+  #wrapper {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+#wrapper p {
+  line-height: 150%;
+}
+#wrapper .front-matter {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#wrapper .front-matter .title {
+  margin-bottom: -0.1em;
+}
+#wrapper .front-matter .subtitle {
+  margin-top: 0.1em;
+}
+#wrapper .front-matter .date {
+  margin-top: 0.3em;
+}
+#wrapper .front-matter a.linkpost {
+  margin: 0 0.7em;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+#wrapper .front-matter a.linkpost:before {
+  content: "↳ ";
+}
+#wrapper pre {
+  margin-left: -2em;
+  margin-right: -2em;
+}
+@media (max-width: 500px) {
+  #wrapper pre {
+    margin-left: -1em;
+    margin-right: -1em;
+  }
+}
+#wrapper blockquote {
+  background-color: #FAFAFA;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0 1.5em;
+  border-left: 6px solid #CCC;
+}
+#wrapper blockquote pre {
+  margin-left: 0;
+  margin-right: 0;
+}
+#copyright {
+  margin: 1em auto;
+  text-align: center;
+  color: #999999;
+}
+.pagination {
+  content: '';
+  display: table;
+  margin: 1em 0;
+  width: 100%;
+}
+.pagination .previousPage {
+  float: right;
+}
+.error {
+  text-align: center;
+  margin: 3em auto;
+}
+iframe.twitter-tweet {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.headshot {
+  margin-right: 1em;
+  margin-top: 1em;
+  float: left;
+}
+.archive h5 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+.footnote {
+  vertical-align: super;
+  font-size: smaller;
+}
