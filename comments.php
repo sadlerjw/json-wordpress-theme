@@ -23,12 +23,12 @@ if ( post_password_required() ) {
 }
 ?>
 
+<hr class="articleDivider" />
+
 <div id="comments" class="comments-area">
 
 	<?php
 	if ( have_comments() ) : ?>
-	<hr class="articleDivider" />
-
 		<div class="comment-list">
 			<?php
 				wp_list_comments( array(
