@@ -480,3 +480,69 @@ iframe.twitter-tweet {
       content: '— ';
     }
 }
+
+.comments-area {
+    margin-top: 2em;
+    font-size: 0.9em;
+
+    .comment-body {
+        padding-left: 1em;
+        border-left: 0.2em solid desaturate(lighten(@linkColor, 25%), 30%);
+    }
+
+    .comment-author {
+        font-family: 'Exo 2', sans-serif;
+    }
+
+    .comment-metadata {
+        font-size: 0.8em;
+    }
+
+    .edit-link:before, .reply:before {
+            content: ' | ';
+            margin-left: 0.3em;
+            margin-right: 0.3em;
+    }
+
+    .comment-respond {
+        margin-top: 2em;
+        padding-left: 1em;
+        border-left: 0.2em solid desaturate(darken(#43d7df, 10%), 15%);
+
+        .comment-notes {
+            font-size: 0.8em;
+        }
+
+        label {
+            display: block;
+        }
+
+        .comment-form-comment {
+            margin: 0;
+        }
+
+        .form-submit {
+            margin-top: 0;
+        }
+
+        textarea, input {
+            padding: 0.5em 1em;
+            border: 1px solid #CCC;
+            border-radius: 0.5em;
+
+            &:focus {
+                border-color: darken(#CCC, 20%);
+            }
+        }
+
+        input.submit {
+            margin: 0.5em 0;
+            &:hover {
+                border-color: darken(#CCC, 20%);
+            }
+            &:active {
+                background-color: #CCC;
+            }
+        }
+    }
+}

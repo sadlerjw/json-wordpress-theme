@@ -22,10 +22,8 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-<?php
-if ( have_comments() ) : ?>
-	<hr class="articleDivider" />
-<?php endif; ?>
+
+<hr class="articleDivider" />
 
 <div id="comments" class="comments-area">
 
@@ -38,6 +36,7 @@ if ( have_comments() ) : ?>
 					'style'       => 'div',
 					'short_ping'  => true,
 					'reply_text'  => 'Reply',
+					'callback'	  => 'render_comment',
 				) );
 			?>
 		</div>
@@ -47,11 +46,15 @@ if ( have_comments() ) : ?>
 			'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'twentyseventeen' ) . '</span>',
 		) );?>
 
-		<!-- <hr class="articleDivider" /> -->
+		<hr class="articleDivider" />
 
 	<?php endif; // Check for have_comments().
 
-	// comment_form();
+	comment_form(array(
+		'logged_in_as' => null,
+		'title_reply_before'   => '<h2 id="reply-title" class="comment-reply-title">',
+		'title_reply_after'		=> '</h2>',
+	));
 	?>
 
 </div><!-- #comments -->

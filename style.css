@@ -837,3 +837,59 @@ iframe.twitter-tweet {
 .micro .date div:before {
   content: '— ';
 }
+.comments-area {
+  margin-top: 2em;
+  font-size: 0.9em;
+}
+.comments-area .comment-body {
+  padding-left: 1em;
+  border-left: 0.2em solid #76c67a;
+}
+.comments-area .comment-author {
+  font-family: 'Exo 2', sans-serif;
+}
+.comments-area .comment-metadata {
+  font-size: 0.8em;
+}
+.comments-area .edit-link:before,
+.comments-area .reply:before {
+  content: ' | ';
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+}
+.comments-area .comment-respond {
+  margin-top: 2em;
+  padding-left: 1em;
+  border-left: 0.2em solid #35b3ba;
+}
+.comments-area .comment-respond .comment-notes {
+  font-size: 0.8em;
+}
+.comments-area .comment-respond label {
+  display: block;
+}
+.comments-area .comment-respond .comment-form-comment {
+  margin: 0;
+}
+.comments-area .comment-respond .form-submit {
+  margin-top: 0;
+}
+.comments-area .comment-respond textarea,
+.comments-area .comment-respond input {
+  padding: 0.5em 1em;
+  border: 1px solid #CCC;
+  border-radius: 0.5em;
+}
+.comments-area .comment-respond textarea:focus,
+.comments-area .comment-respond input:focus {
+  border-color: #999999;
+}
+.comments-area .comment-respond input.submit {
+  margin: 0.5em 0;
+}
+.comments-area .comment-respond input.submit:hover {
+  border-color: #999999;
+}
+.comments-area .comment-respond input.submit:active {
+  background-color: #CCC;
+}
