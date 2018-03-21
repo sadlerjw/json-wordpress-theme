@@ -22,7 +22,7 @@ function add_async_forscript($url)
     else if (is_admin())
         return str_replace('#asyncload', '', $url);
     else
-        return str_replace('#asyncload', '', $url)."' async='async"; 
+        return str_replace('#asyncload', '', $url)."' async='async";
 }
 add_filter('clean_url', 'add_async_forscript', 11, 1);
 
@@ -39,3 +39,29 @@ function json_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'json_scripts' );
+
+function no_title_micropost($post_id) {
+    // If this is a revision, get real post ID
+    if ( $parent_id = wp_is_post_revision( $post_id ) )
+        $post_id = $parent_id;
+
+    $post = get_post( $post_id );
+
+    // Get default category ID from options
+    $microCategory = get_category_by_slug( 'micro' );
+    $title = $post->post_title;
+
+    // Check if this post is in default category
+    if ( strlen($title) == 0 && $microCategory !== false ) {
+        // unhook this function so it doesn't loop infinitely
+        // remove_action( 'save_post', 'no_title_micropost' );
+
+        // update the post, which calls save_post again
+        wp_set_post_categories( $post_id, array($microCategory->term_id), true);
+
+        // re-hook this function
+        // add_action( 'save_post', 'no_title_micropost' );
+    }
+}
+add_action( 'save_post', 'no_title_micropost' );
+
