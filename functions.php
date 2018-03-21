@@ -31,11 +31,15 @@ function json_scripts() {
 	wp_enqueue_style( 'json-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'json-fonts', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600,300italic,600italic|Source+Code+Pro|Exo+2:200,600' );
 
-	wp_enqueue_script( 'json-main', get_template_directory_uri() . '/scripts/main.js', array(), '20180318', true );
+	wp_enqueue_script( 'json-main', get_template_directory_uri() . '/scripts/main.js', array(), '20180319', true );
 	wp_enqueue_script( 'json-highlightjs', get_template_directory_uri() . '/scripts/highlight.pack.js', array(), `20180318`, true );
 	wp_add_inline_script( 'json-highlightjs', 'hljs.initHighlightingOnLoad();' );
 
 	wp_enqueue_script( 'json-twitter', 'https://platform.twitter.com/widgets.js#asyncload', array(), null, true);
+
+    if (get_bloginfo('url') === 'http://vccw.test') {
+        wp_enqueue_script( 'json-livereload', 'http://localhost:35729/livereload.js' );
+    }
 
 }
 add_action( 'wp_enqueue_scripts', 'json_scripts' );

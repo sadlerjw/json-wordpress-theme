@@ -4,7 +4,6 @@ Author: Jason Sadler
 Dsecription: Theme for sadlerjw.com
 Version: 1.0
 */
-
 /*
 
 Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
@@ -822,29 +821,19 @@ iframe.twitter-tweet {
   float: left;
 }
 .archive {
-  margin-top: 1.5em;
-  margin-bottom: 1em;
-}
-.sya_container, .archive h5 {
   color: #333;
   font-weight: 600;
   margin-bottom: 0.5em;
-  font-family: 'Exo 2', sans-serif;
-}
-.sya_container * {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 300;
 }
 .footnotes {
   font-size: 0.8em;
 }
-
 .micro .date {
   margin-top: -1.5em;
   padding-left: 1em;
   font-size: 0.8em;
 }
-
-.micro .date a:before, .micro .date div:before {
+.micro .date a:before,
+.micro .date div:before {
   content: '— ';
 }

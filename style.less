@@ -1,0 +1,482 @@
+/*
+Theme Name: JSON
+Author: Jason Sadler
+Dsecription: Theme for sadlerjw.com
+Version: 1.0
+*/
+
+@import (inline) "css/code.css";
+@import (inline) "bower_components/bigfoot/dist/bigfoot-number.css";
+
+@idealContentWidth: 640px;
+
+@shrinkBreakpoint: 700px;
+@mobileBreakpoint: 500px;
+@mobileBreakpointPlusOne: 501px;
+
+@font: 'Source Sans Pro', sans-serif;
+@codeFont: 'Source Code Pro', monospace;
+
+@textColor: #333;
+@navTextColor: @textColor;
+@linkColor: darken(@codeStringTokenColor, 20%);
+
+@codeBasePadding: 20px;
+@codeIndent: 40px;
+@codeStringTokenColor: #43DF4B;
+@codeNoTokenColor: #D9EBFF;
+@codeBackgroundColor: #002b36;
+@codeSelectedBackgroundColor: #13334A;
+
+@contentPadding: 2em;
+
+@leftDent: @contentPadding;
+
+.box-shadow (@string) {
+    -webkit-box-shadow: @string;
+    -moz-box-shadow:    @string;
+    box-shadow:         @string;
+}
+
+body {
+    font-family: @font;
+    font-weight: 300;
+    margin: 0;
+    color: @textColor;
+    -webkit-text-size-adjust: 100%;
+}
+
+a {
+    color: @linkColor;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+strong {
+    font-weight: 600;
+}
+
+pre, code {
+    font-family: @codeFont;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+code {
+    background: #EEE;
+    font-weight: 200;
+}
+
+pre code {
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 200;
+}
+
+h1 {
+    font-size: 2em;
+    margin-top: 0.25em;
+    margin-bottom: 0.1em;
+}
+
+h2 {
+    font-size: 1em;
+    font-weight: 600;
+
+    &.subtitle {
+        margin-top: -0.2em;
+        margin-bottom: 0.8em;
+    }
+}
+
+h3, h4, h5 {
+    font-size: 1em;
+    color: grey;
+
+    &.date {
+        margin: 0;
+    }
+}
+
+hr {
+    margin: 1em 9em 1em 9em;
+    border: none;
+    border-top: 1px #CCC solid;
+
+    &.articleDivider {
+        margin: 2em 4em 0 4em;
+        border-top: 1px #BBB solid;
+    }
+}
+
+img, picture {
+    max-width: 100%;
+}
+
+#top {
+    padding: 0;
+
+    @media (max-width: @mobileBreakpoint) {
+        .box-shadow(0px -5px 7px 8px rgba(0,0,0,1));
+    }
+
+    #header {
+        background-color: @codeBackgroundColor;
+        color: @codeNoTokenColor;
+        padding: 0;
+        font-size: 2em;
+        height: 4.7em;
+        overflow: hidden;
+
+        @media (max-width: @shrinkBreakpoint) {
+            height: 1.1em;
+        }
+        @media (min-width: @mobileBreakpoint) {
+            .box-shadow(0px -5px 7px 8px rgba(0,0,0,1));
+        }
+
+        .headerCode {
+            font-family: @codeFont;
+            font-weight: 400;
+            padding: 0;
+
+            @media (max-width: @shrinkBreakpoint) and (min-width: @mobileBreakpointPlusOne) {
+                &.fullSize {
+                    display: none !important;
+                }
+                &.shrinkSize {
+                    display: block !important;
+                }
+            }
+            @media (max-width: @mobileBreakpoint) {
+                &.fullSize {
+                    display: none !important;
+                }
+                &.mobileSize {
+                    display: block !important;
+                }
+            }
+
+            &.fullSize {
+                display: block;
+            }
+            &.shrinkSize {
+                display: none;
+            }
+            &.mobileSize {
+                display: none;
+            }
+
+            .codeLine {
+                padding: 0 @codeBasePadding;
+
+                &.indent1 {
+                    padding-left: @codeBasePadding + @codeIndent;
+                }
+                &.indent2 {
+                    padding-left: @codeBasePadding + @codeIndent * 2;
+                }
+            }
+
+            .stringToken, .stringToken a {
+                color: @codeStringTokenColor;
+            }
+        }
+
+        .siteTitle {
+            background-color: @codeSelectedBackgroundColor;
+        }
+
+        #menu_button {
+            // http://sarasoueidan.com/blog/navicon-transformicons/
+            //
+            @media (min-width: @mobileBreakpointPlusOne) {
+                display: none;
+            }
+
+            @buttonSize: 28px;
+            @transition: .3s;
+            position: absolute;
+            right: 1em;
+            top: -.6em;
+
+            border: none;
+            background: none;
+
+            display: inline-block;
+            padding: @buttonSize/2 @buttonSize/4;
+            transition: transform-origin @transition, left @transition, top @transition, border-radius @transition, background @transition, transform @transition;
+            cursor: pointer;
+            user-select: none;
+            border-radius: @buttonSize/7;
+
+            .line() {
+              display: inline-block;
+              width: @buttonSize;
+              height: @buttonSize/7;
+              background: white;
+              border-radius: @buttonSize/14;
+              transition: transform-origin @transition, left @transition, top @transition, border-radius @transition, background @transition, transform @transition;
+            }
+
+            .lines {
+                .line;
+                position: relative;
+
+                &:before, &:after {
+
+                    .line;
+                    position: absolute;
+                    left:0;
+                    content: '';
+                    transform-origin: @buttonSize/14 center;
+                }
+                &:before { top: @buttonSize/4; }
+                &:after { top: -@buttonSize/4; }
+            }
+
+            &.open .lines {
+                background: transparent;
+
+                /*overlay the lines by setting both their top values to 0*/
+                &:before, &:after{
+                    transform-origin: 50% 50%;
+                    top:0;
+                    width: @buttonSize;
+                }
+
+                // rotate the lines to form the x shape
+                &:before{
+                    transform: rotate3d(0,0,1,45deg);
+                }
+                &:after{
+                    transform: rotate3d(0,0,1,-45deg);
+                }
+            }
+
+            &.closed:hover, {
+                opacity: 1;
+
+                .lines {
+                    &:before { top: @buttonSize/3.5; }
+                    &:after { top: -@buttonSize/3.5; }
+                }
+            }
+        }
+    }
+    #navContainer {
+        #content;
+
+        @media (max-width: @mobileBreakpoint) {
+            &.open {
+                // display: block;
+                max-height: 12em;
+            }
+            // display: none;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height .3s;
+        }
+
+
+        #nav {
+            position: relative;
+            padding-top: 20px;
+
+            @media (max-width: @mobileBreakpoint) {
+                background-color: @codeBackgroundColor;
+                color: @codeNoTokenColor;
+                margin: 0 -@contentPadding / 2;
+                padding: 0;
+            }
+
+            @media (min-width: @mobileBreakpoint) {
+                color: @navTextColor;
+                border-bottom: 1px solid #CCC;
+                left: -@leftDent;
+                padding-left: @leftDent;
+                padding-right: @leftDent;
+                width:100%;
+            }
+
+
+            ul {
+                margin: 0;
+                padding: 0;
+                max-width: @idealContentWidth;
+
+                li {
+                    list-style: none;
+                    margin: 0 1em;
+
+                    @media (min-width: @mobileBreakpoint) {
+                        display: inline;
+
+                        a {
+                            color: @navTextColor;
+                            &:hover {
+                                color: @linkColor;
+                            }
+                        }
+
+                        &:first-of-type {
+                            margin-left: 0;
+                        }
+                    }
+                    @media (max-width: @mobileBreakpoint) {
+                        display: block;
+                        border-top: 1px solid @codeSelectedBackgroundColor;
+                        border-bottom: 1px solid @codeSelectedBackgroundColor;
+                        margin: 0;
+                        padding: 0;
+
+                        &:hover {
+                            background-color: @codeSelectedBackgroundColor;
+                        }
+
+                        a {
+                            color: @codeNoTokenColor;
+                            display:block;
+                            width: 100%;
+                            padding: .6em 1em;
+                            box-sizing: border-box;
+                        }
+                    }
+
+                    a {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#content {
+    font-size: 1.2em;
+    margin: auto;
+    max-width: @idealContentWidth;
+
+    @media (max-width: @mobileBreakpoint) {
+        padding-left: @contentPadding / 2;
+        padding-right: @contentPadding / 2;
+        overflow: auto;
+    }
+    padding-left: @contentPadding;
+    padding-right: @contentPadding;
+}
+
+
+
+.article {
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+
+    p {
+        line-height: 150%;
+    }
+
+    .front-matter  {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        .title {
+            margin-bottom: -.1em;
+        }
+        .subtitle {
+            margin-top: 0.1em;
+        }
+        .date {
+            margin-top: 0.3em;
+        }
+        a.linkpost {
+            margin: 0 0.7em;
+            white-space: nowrap;
+            vertical-align: baseline;
+            &:before {
+                content: "↳ ";
+            }
+        }
+    }
+
+    pre {
+        @media (max-width: @mobileBreakpoint) {
+            margin-left: -@contentPadding / 2;
+            margin-right: -@contentPadding / 2;
+        }
+        // @media (min-width: @mobileBreakpointPlusOne) and (max-width: @shrinkBreakpoint) {
+            margin-left: -@contentPadding;
+            margin-right: -@contentPadding;
+        // }
+    }
+
+    blockquote {
+        background-color: #FAFAFA;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 1.5em;
+        border-left: 6px solid #CCC;
+
+        pre {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+
+#copyright {
+    margin: 1em auto;
+    text-align: center;
+    color: lighten(@textColor, 40%);
+}
+
+.pagination {
+    content: '';
+    display: table;
+    margin: 1em 0;
+    width: 100%;
+
+    .previousPage {
+        float: right;
+    }
+}
+
+.error {
+    text-align: center;
+    margin: 3em auto;
+}
+
+iframe.twitter-tweet {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.headshot {
+    margin-right: 1em;
+    margin-top: 1em;
+    float: left;
+}
+
+.archive {
+    color: @textColor;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+}
+
+.footnotes {
+    font-size: 0.8em;
+}
+
+.micro .date {
+  margin-top: -1.5em;
+  padding-left: 1em;
+  font-size: 0.8em;
+
+  a:before, div:before {
+      content: '— ';
+    }
+}

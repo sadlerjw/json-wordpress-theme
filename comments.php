@@ -22,8 +22,10 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-
-<hr class="articleDivider" />
+<?php
+if ( have_comments() ) : ?>
+	<hr class="articleDivider" />
+<?php endif; ?>
 
 <div id="comments" class="comments-area">
 

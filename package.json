@@ -1,0 +1,17 @@
+{
+  "name": "JSON-Wordpress-Theme",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "almond": "^0.3.2",
+    "generator-express": "^2.7.2",
+    "gulp": "^3.9.0",
+    "gulp-less": "^3.0.1",
+    "gulp-nodemon": "^2.0.2",
+    "gulp-plumber": "^1.0.0",
+    "gulp-requirejs": "^0.1.3",
+    "gulp-uglify": "^1.5.3",
+    "gulp-livereload": "^3.8.1"
+  }
+}
