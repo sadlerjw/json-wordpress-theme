@@ -26,6 +26,26 @@ function add_async_forscript($url)
 }
 add_filter('clean_url', 'add_async_forscript', 11, 1);
 
+function permalink_as_guid($guid, $id) {
+    // Use permalink, and strip trailing `/`
+    $permalink = get_the_permalink($id);
+    if (substr($permalink, -1, 1) == '/') {
+        $permalink = substr($permalink, 0, -1);
+    }
+    return $permalink;
+}
+add_filter('the_guid', 'permalink_as_guid', 11, 2);
+
+function permalink_as_shortlink($guid, $id) {
+    // Use permalink, and strip trailing `/`
+    $permalink = get_the_permalink($id);
+    if (substr($permalink, -1, 1) == '/') {
+        $permalink = substr($permalink, 0, -1);
+    }
+    return $permalink;
+}
+add_filter('pre_get_shortlink', 'permalink_as_shortlink', 11, 2);
+
 function json_scripts() {
 	// Load our main stylesheet.
 	wp_enqueue_style( 'json-style', get_stylesheet_uri() );
