@@ -401,6 +401,9 @@ img, picture {
                 content: "↳ ";
             }
         }
+        .p-author {
+            display: none;
+        }
     }
 
     pre {
@@ -471,13 +474,19 @@ iframe.twitter-tweet {
     font-size: 0.8em;
 }
 
-.micro .date {
-  margin-top: -1.5em;
-  padding-left: 1em;
-  font-size: 0.8em;
+.micro  {
+    .p-author {
+        display: none;
+    }
 
-  a:before, div:before {
-      content: '— ';
+    .date {
+        margin-top: -1.5em;
+        padding-left: 1em;
+        font-size: 0.8em;
+
+        .dt-published:before {
+            content: '— ';
+        }
     }
 }
 
@@ -504,7 +513,7 @@ iframe.twitter-tweet {
             margin-right: 0.3em;
     }
 
-    .comment-respond {
+    .comment-respond, #webmention-form {
         margin-top: 2em;
         padding-left: 1em;
         border-left: 0.2em solid desaturate(darken(#43d7df, 10%), 15%);
@@ -517,7 +526,7 @@ iframe.twitter-tweet {
             display: block;
         }
 
-        .comment-form-comment {
+        .comment-form-comment, #webmention-form p {
             margin: 0;
         }
 
@@ -535,7 +544,7 @@ iframe.twitter-tweet {
             }
         }
 
-        input.submit {
+        input.submit, input#webmention-submit {
             margin: 0.5em 0;
             &:hover {
                 border-color: darken(#CCC, 20%);

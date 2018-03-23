@@ -772,6 +772,9 @@ picture {
 .article .front-matter a.linkpost:before {
   content: "↳ ";
 }
+.article .front-matter .p-author {
+  display: none;
+}
 .article pre {
   margin-left: -2em;
   margin-right: -2em;
@@ -828,13 +831,15 @@ iframe.twitter-tweet {
 .footnotes {
   font-size: 0.8em;
 }
+.micro .p-author {
+  display: none;
+}
 .micro .date {
   margin-top: -1.5em;
   padding-left: 1em;
   font-size: 0.8em;
 }
-.micro .date a:before,
-.micro .date div:before {
+.micro .date .dt-published:before {
   content: '— ';
 }
 .comments-area {
@@ -857,39 +862,59 @@ iframe.twitter-tweet {
   margin-left: 0.3em;
   margin-right: 0.3em;
 }
-.comments-area .comment-respond {
+.comments-area .comment-respond,
+.comments-area #webmention-form {
   margin-top: 2em;
   padding-left: 1em;
   border-left: 0.2em solid #35b3ba;
 }
-.comments-area .comment-respond .comment-notes {
+.comments-area .comment-respond .comment-notes,
+.comments-area #webmention-form .comment-notes {
   font-size: 0.8em;
 }
-.comments-area .comment-respond label {
+.comments-area .comment-respond label,
+.comments-area #webmention-form label {
   display: block;
 }
-.comments-area .comment-respond .comment-form-comment {
+.comments-area .comment-respond .comment-form-comment,
+.comments-area #webmention-form .comment-form-comment,
+.comments-area .comment-respond #webmention-form p,
+.comments-area #webmention-form #webmention-form p {
   margin: 0;
 }
-.comments-area .comment-respond .form-submit {
+.comments-area .comment-respond .form-submit,
+.comments-area #webmention-form .form-submit {
   margin-top: 0;
 }
 .comments-area .comment-respond textarea,
-.comments-area .comment-respond input {
+.comments-area #webmention-form textarea,
+.comments-area .comment-respond input,
+.comments-area #webmention-form input {
   padding: 0.5em 1em;
   border: 1px solid #CCC;
   border-radius: 0.5em;
 }
 .comments-area .comment-respond textarea:focus,
-.comments-area .comment-respond input:focus {
+.comments-area #webmention-form textarea:focus,
+.comments-area .comment-respond input:focus,
+.comments-area #webmention-form input:focus {
   border-color: #999999;
 }
-.comments-area .comment-respond input.submit {
+.comments-area .comment-respond input.submit,
+.comments-area #webmention-form input.submit,
+.comments-area .comment-respond input#webmention-submit,
+.comments-area #webmention-form input#webmention-submit {
   margin: 0.5em 0;
 }
-.comments-area .comment-respond input.submit:hover {
+.comments-area .comment-respond input.submit:hover,
+.comments-area #webmention-form input.submit:hover,
+.comments-area .comment-respond input#webmention-submit:hover,
+.comments-area #webmention-form input#webmention-submit:hover {
   border-color: #999999;
 }
-.comments-area .comment-respond input.submit:active {
+.comments-area .comment-respond input.submit:active,
+.comments-area #webmention-form input.submit:active,
+.comments-area .comment-respond input#webmention-submit:active,
+.comments-area #webmention-form input#webmention-submit:active {
   background-color: #CCC;
 }
