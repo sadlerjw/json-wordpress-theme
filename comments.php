@@ -13,6 +13,11 @@
  * @version 1.0
  */
 
+// Enable comment UI only for admins, for now.
+if (!current_user_can('administrator')) {
+	return;
+}
+
 /*
  * If the current post is protected by a password and
  * the visitor has not yet entered the password we will
