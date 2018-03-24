@@ -23,7 +23,7 @@ $hasTitle = isset( $post->post_title ) && strlen($post->post_title) > 0;
 </div>
 
 <?php if (!$hasTitle): ?>
-	<div class="date"><a href="<?php the_permalink() ?>"><time class="dt-published" datetime="<?= get_the_date('c'); ?>"><?php echo  get_the_date() . ' ' . get_the_time(); ?></time></a>
+	<div class="date"><a href="<?php the_permalink() ?>" class="u-url"><time class="dt-published" datetime="<?= get_the_date('c'); ?>"><?php echo  get_the_date() . ' ' . get_the_time(); ?></time></a>
 </div>
 <a rel="author" class="p-author h-card" href="<?php bloginfo( 'url' ); ?>"><?php the_author() ?></a>
 <?php else: ?>
