@@ -7,21 +7,27 @@ var gulp = require('gulp'),
   uglify = require('gulp-uglify');
 
 gulp.task('scripts', function() {
-  r({
-      baseUrl: './scripts_src/',
-      out: 'main.js',
-      name: '../node_modules/almond/almond',
-      include: 'main',
-      wrap: true,
-      shim: {
-        'bigfoot': ['jquery']
-      },
-      paths: {
-        'jquery': '../bower_components/jquery/dist/jquery',
-        'bigfoot': '../bower_components/bigfoot/dist/bigfoot'
-      }
-    })
-  .pipe(uglify())
+  // r({
+  //     baseUrl: './scripts_src/',
+  //     out: 'main.js',
+  //     name: '../node_modules/almond/almond',
+  //     include: 'main',
+  //     wrap: true,
+  //     shim: {
+  //       'bigfoot': ['jquery']
+  //     },
+  //     paths: {
+  //       'jquery': '../bower_components/jquery/dist/jquery',
+  //       'bigfoot': '../bower_components/bigfoot/dist/bigfoot'
+  //     }
+  //   })
+  // .pipe(uglify())
+  // .pipe(gulp.dest('./scripts'))
+  // .pipe(livereload());
+  gulp.src([
+    './scripts_src/*',
+     './bower_components/bigfoot/dist/bigfoot.js'
+    ])
   .pipe(gulp.dest('./scripts'))
   .pipe(livereload());
 })
