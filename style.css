@@ -842,6 +842,10 @@ iframe.twitter-tweet {
 .micro .date .dt-published:before {
   content: '— ';
 }
+.syn-text,
+.relsyn {
+  display: none !important;
+}
 .comments-area {
   margin-top: 2em;
   font-size: 0.9em;
