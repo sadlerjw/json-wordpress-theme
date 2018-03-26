@@ -1,4 +1,8 @@
-require(['jquery', 'bigfoot'], function($, bigfoot) {
+// require(['jquery', 'bigfoot'], function($, bigfoot) {
+(function( $ ) {
+ 
+    "use strict";
+     
 	$.bigfoot({
 		actionOriginalFN: 'ignore'
 	})
@@ -21,4 +25,7 @@ require(['jquery', 'bigfoot'], function($, bigfoot) {
 			}
 		}, false);
 	});
-})
+ 
+})(jQuery);
+
+// })

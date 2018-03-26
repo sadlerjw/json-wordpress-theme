@@ -51,7 +51,10 @@ function json_scripts() {
 	wp_enqueue_style( 'json-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'json-fonts', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600,300italic,600italic|Source+Code+Pro|Exo+2:200,600' );
 
-	wp_enqueue_script( 'json-main', get_template_directory_uri() . '/scripts/main.js', array(), '20180319', true );
+    wp_enqueue_script( 'jquery' );
+    wp_enqueue_script( 'bigfoot', get_template_directory_uri() . '/scripts/bigfoot.js', array('jquery'));
+
+	wp_enqueue_script( 'json-main', get_template_directory_uri() . '/scripts/main.js', array('jquery', 'bigfoot'), '20180319', true );
 	wp_enqueue_script( 'json-highlightjs', get_template_directory_uri() . '/scripts/highlight.pack.js', array(), `20180318`, true );
 	wp_add_inline_script( 'json-highlightjs', 'hljs.initHighlightingOnLoad();' );
 
