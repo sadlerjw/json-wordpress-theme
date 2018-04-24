@@ -64,6 +64,10 @@ function json_scripts() {
         wp_enqueue_script( 'json-livereload', 'http://localhost:35729/livereload.js' );
     }
 
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
+
 }
 add_action( 'wp_enqueue_scripts', 'json_scripts' );
 

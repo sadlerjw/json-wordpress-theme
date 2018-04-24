@@ -32,7 +32,7 @@ if ( post_password_required() ) {
 		<div class="comment-list">
 			<?php
 				wp_list_comments( array(
-					'avatar_size' => 0,
+					'avatar_size' => 32,
 					'style'       => 'div',
 					'short_ping'  => true,
 					'reply_text'  => 'Reply',
@@ -42,11 +42,9 @@ if ( post_password_required() ) {
 		</div>
 
 		<?php the_comments_pagination( array(
-			'prev_text' => '<span class="screen-reader-text">' . __( 'Previous', 'twentyseventeen' ) . '</span>',
-			'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'twentyseventeen' ) . '</span>',
+			'prev_text' => '<span class="screen-reader-text">Previous</span>',
+			'next_text' => '<span class="screen-reader-text">Next</span>',
 		) );?>
-
-		<hr class="articleDivider" />
 
 	<?php endif; // Check for have_comments().
 
