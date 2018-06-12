@@ -58,8 +58,6 @@ function json_scripts() {
 	wp_enqueue_script( 'json-highlightjs', get_template_directory_uri() . '/scripts/highlight.pack.js', array(), `20180318`, true );
 	wp_add_inline_script( 'json-highlightjs', 'hljs.initHighlightingOnLoad();' );
 
-	wp_enqueue_script( 'json-twitter', 'https://platform.twitter.com/widgets.js#asyncload', array(), null, true);
-
     if (get_bloginfo('url') === 'http://vccw.test') {
         wp_enqueue_script( 'json-livereload', 'http://localhost:35729/livereload.js' );
     }
