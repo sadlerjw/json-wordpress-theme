@@ -850,20 +850,25 @@ iframe.twitter-tweet {
   margin-top: 2em;
   font-size: 0.9em;
 }
-.comments-area .comment {
+.comments-area .comment,
+.comments-area div.webmention {
   padding-left: 0.8em;
   border-left: 0.2em solid #76c67a;
 }
-.comments-area .comment.depth-2 {
+.comments-area .comment.depth-2,
+.comments-area div.webmention.depth-2 {
   border-left-color: #9ad59d;
 }
-.comments-area .comment.depth-3 {
+.comments-area .comment.depth-3,
+.comments-area div.webmention.depth-3 {
   border-left-color: #bee4c0;
 }
-.comments-area .comment.depth-4 {
+.comments-area .comment.depth-4,
+.comments-area div.webmention.depth-4 {
   border-left-color: #e2f3e3;
 }
-.comments-area .comment .comment-content {
+.comments-area .comment .comment-content,
+.comments-area div.webmention .comment-content {
   margin-top: -0.5em;
 }
 .comments-area .comment-author {
