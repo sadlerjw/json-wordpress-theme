@@ -114,10 +114,6 @@ hr {
     }
 }
 
-img, picture {
-    max-width: 100%;
-}
-
 #top {
     padding: 0;
 
@@ -415,6 +411,21 @@ img, picture {
             margin-left: -@contentPadding;
             margin-right: -@contentPadding;
         // }
+    }
+
+    img, picture {
+        max-width: 100%;
+        height: auto;
+        @media (max-width: @mobileBreakpoint) {
+            margin-left: -@contentPadding / 2;
+            margin-right: -@contentPadding / 2;
+            max-width: ~"calc(100% + @{contentPadding})";
+        }
+        @media (min-width: @mobileBreakpointPlusOne) and (max-width: @shrinkBreakpoint) {
+            margin-left: -@contentPadding;
+            margin-right: -@contentPadding;
+            max-width: ~"calc(100% + (@{contentPadding} * 2))";
+        }
     }
 
     blockquote {
