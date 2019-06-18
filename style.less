@@ -18,12 +18,18 @@ Version: 1.0
 @codeFont: 'Source Code Pro', monospace;
 
 @textColor: #333;
+@darkModeTextColor: #ccc;
 @navTextColor: @textColor;
+@darkModeNavTextColor: @darkModeTextColor;
 @linkColor: darken(@codeStringTokenColor, 20%);
+@darkModelLinkColor: #38b13f;
+
+@darkModeBackgroundColor: #333;
 
 @codeBasePadding: 20px;
 @codeIndent: 40px;
 @codeStringTokenColor: #43DF4B;
+@darkModeCodeStringTokenColor: #43C34A;
 @codeNoTokenColor: #D9EBFF;
 @codeBackgroundColor: #002b36;
 @codeSelectedBackgroundColor: #13334A;
@@ -44,6 +50,11 @@ body {
     margin: 0;
     color: @textColor;
     -webkit-text-size-adjust: 100%;
+
+    @media (prefers-color-scheme: dark) {
+        color: @darkModeTextColor;
+        background-color: @darkModeBackgroundColor
+    }
 }
 
 a {
@@ -51,6 +62,10 @@ a {
     text-decoration: none;
     &:hover {
         text-decoration: underline;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        color: @darkModelLinkColor;
     }
 }
 
@@ -67,10 +82,15 @@ pre, code {
 code {
     background: #EEE;
     font-weight: 200;
+
+    @media (prefers-color-scheme: dark) {
+        background: #4A4A4A;
+    }
 }
 
 pre code {
     font-weight: 400;
+    scrollbar-color: #666 #444;
 }
 
 h1, h2, h3, h4, h5 {
@@ -108,9 +128,17 @@ hr {
     border: none;
     border-top: 1px #CCC solid;
 
+    @media (prefers-color-scheme: dark) {
+        border-top: 1px #575757 solid;
+    }
+
     &.articleDivider {
         margin: 2em 4em 0 4em;
         border-top: 1px #BBB solid;
+
+        @media (prefers-color-scheme: dark) {
+            border-top: 1px #868686 solid;
+        }
     }
 }
 
@@ -119,6 +147,10 @@ hr {
 
     @media (max-width: @mobileBreakpoint) {
         .box-shadow(0px -5px 7px 8px rgba(0,0,0,1));
+
+        @media (prefers-color-scheme: dark) {
+            .box-shadow(0px -5px 7px 8px #222);
+        }
     }
 
     #header {
@@ -134,6 +166,10 @@ hr {
         }
         @media (min-width: @mobileBreakpoint) {
             .box-shadow(0px -5px 7px 8px rgba(0,0,0,1));
+
+            @media (prefers-color-scheme: dark) {
+                .box-shadow(0px -5px 7px 8px #222);
+            }
         }
 
         .headerCode {
@@ -181,6 +217,9 @@ hr {
 
             .stringToken, .stringToken a {
                 color: @codeStringTokenColor;
+                @media (prefers-color-scheme: dark) {
+                    color: @darkModeCodeStringTokenColor;
+                }
             }
         }
 
@@ -315,8 +354,14 @@ hr {
 
                         a {
                             color: @navTextColor;
+                            @media (prefers-color-scheme: dark) {
+                                color: @darkModeNavTextColor;
+                            }
                             &:hover {
                                 color: @linkColor;
+                                @media (prefers-color-scheme: dark) {
+                                    color: @darkModelLinkColor;
+                                }
                             }
                         }
 
@@ -435,6 +480,11 @@ hr {
         padding: 0 1.5em;
         border-left: 6px solid #CCC;
 
+        @media (prefers-color-scheme: dark) {
+            background-color: #444;
+            border-left: 6px solid #666;
+        }
+
         pre {
             margin-left: 0;
             margin-right: 0;
@@ -500,6 +550,7 @@ iframe.twitter-tweet {
 }
 
 @comment-border-color: desaturate(lighten(@linkColor, 25%), 30%);
+@darkMode-comment-border-color: #46d7e0;
 
 .comments-area {
     margin-top: 2em;
@@ -518,6 +569,21 @@ iframe.twitter-tweet {
         }
         &.depth-4 {
             border-left-color: lighten(@comment-border-color, 30%);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            border-left: 0.2em solid @darkMode-comment-border-color;
+
+            &.depth-1 {}
+            &.depth-2 {
+                border-left-color: darken(@darkMode-comment-border-color, 10%);
+            }
+            &.depth-3 {
+                border-left-color: darken(@darkMode-comment-border-color, 20%);
+            }
+            &.depth-4 {
+                border-left-color: darken(@darkMode-comment-border-color, 30%);
+            }
         }
 
         .comment-content {
@@ -549,7 +615,7 @@ iframe.twitter-tweet {
     .comment-respond, #webmention-form {
         margin-top: 2em;
         padding-left: 1em;
-        border-left: 0.2em solid desaturate(darken(#43d7df, 10%), 15%);
+        border-left: 0.2em solid #46d7e0;
 
         .comment-notes {
             font-size: 0.8em;
@@ -572,6 +638,12 @@ iframe.twitter-tweet {
             border: 1px solid #CCC;
             border-radius: 0.5em;
 
+            @media (prefers-color-scheme: dark) {
+                border: 1px solid #666;
+                background-color: #444;
+                color: #FFF;
+            }
+
             &:focus {
                 border-color: darken(#CCC, 20%);
             }
@@ -584,6 +656,10 @@ iframe.twitter-tweet {
             }
             &:active {
                 background-color: #CCC;
+
+                @media (prefers-color-scheme: dark) {
+                    background-color: #666;
+                }
             }
         }
     }
