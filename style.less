@@ -44,12 +44,17 @@ Version: 1.0
     box-shadow:         @string;
 }
 
+html {
+    background-color: @codeBackgroundColor;
+}
+
 body {
     font-family: @font;
     font-weight: 300;
     margin: 0;
     color: @textColor;
     -webkit-text-size-adjust: 100%;
+    background-color: white;
 
     @media (prefers-color-scheme: dark) {
         color: @darkModeTextColor;
@@ -212,13 +217,6 @@ hr {
                 }
                 &.indent2 {
                     padding-left: @codeBasePadding + @codeIndent * 2;
-                }
-            }
-
-            .stringToken, .stringToken a {
-                color: @codeStringTokenColor;
-                @media (prefers-color-scheme: dark) {
-                    color: @darkModeCodeStringTokenColor;
                 }
             }
         }
@@ -398,7 +396,14 @@ hr {
     }
 }
 
-#content {
+.stringToken, .stringToken a {
+    color: @codeStringTokenColor;
+    @media (prefers-color-scheme: dark) {
+        color: @darkModeCodeStringTokenColor;
+    }
+}
+
+#content, #footer {
     font-size: 1.2em;
     margin: auto;
     max-width: @idealContentWidth;
@@ -412,7 +417,14 @@ hr {
     padding-right: @contentPadding;
 }
 
+#footer-wrapper {
+    background-color: @codeBackgroundColor;
+    border-top: 2px solid black;
 
+    @media (prefers-color-scheme: dark) {
+        border-top-width: 1px;
+    }
+}
 
 .article {
     margin-top: 1.5em;
@@ -495,14 +507,34 @@ hr {
 #copyright {
     margin: 1em auto;
     text-align: center;
-    color: lighten(@textColor, 40%);
+    color: darken(@codeNoTokenColor, 20%);
+    font-family: @codeFont;
+    font-weight: 400;
+    padding-bottom: 2em;
+
+    .stringToken {
+        color: @linkColor;
+
+        @media (prefers-color-scheme: dark) {
+            color: desaturate(darken(@darkModelLinkColor, 5%), 20%);
+        }
+    }
 }
 
 .pagination {
     content: '';
     display: table;
-    margin: 1em 0;
+    margin: 1em -1em;
     width: 100%;
+    border: 1px solid black;
+    padding: 0.5em 1em;
+    font-weight: bold;
+
+    background-color: @codeSelectedBackgroundColor;
+
+    @media (min-width: @mobileBreakpoint) {
+        border-radius: 1em;
+    }
 
     .previousPage {
         float: right;
@@ -536,23 +568,18 @@ iframe.twitter-tweet {
 
     .date {
         margin-top: -0.5em;
-        // padding-left: 1em;
         font-size: 0.8em;
-
-        // .dt-published:before {
-        //     content: '— ';
-        // }
     }
     &.article {
         border: 1px solid @codeSelectedBackgroundColor;
         border-radius: 1em;
         padding: 1em;
         padding-top: 0.7em;
-        width: 66%;
         background-color: darken(white, 3%);
 
+        max-width: @idealContentWidth * 2 / 3;
+
         @media (prefers-color-scheme: dark) {
-            // border-color: desaturate(darken(@linkColor, 5%), 80%);
             background-color: lighten(@darkModeBackgroundColor, 3%);
         }
 
@@ -567,6 +594,10 @@ iframe.twitter-tweet {
             border-radius: 0.7em;
             padding-left: 0.5em;
             padding-right: 0.5em;
+
+            @media (prefers-color-scheme: dark) {
+                background-color: darken(@darkModeBackgroundColor, 3%);
+            }
         }
 
         p:first-child {

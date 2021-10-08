@@ -417,12 +417,16 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 }
 
 /*# sourceMappingURL=bigfoot-number.css.map */
+html {
+  background-color: #002b36;
+}
 body {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
   margin: 0;
   color: #333;
   -webkit-text-size-adjust: 100%;
+  background-color: white;
 }
 @media (prefers-color-scheme: dark) {
   body {
@@ -597,16 +601,6 @@ hr.articleDivider {
 }
 #top #header .headerCode .codeLine.indent2 {
   padding-left: 100px;
-}
-#top #header .headerCode .stringToken,
-#top #header .headerCode .stringToken a {
-  color: #43DF4B;
-}
-@media (prefers-color-scheme: dark) {
-  #top #header .headerCode .stringToken,
-  #top #header .headerCode .stringToken a {
-    color: #43C34A;
-  }
 }
 #top #header .siteTitle {
   background-color: #13334A;
@@ -783,7 +777,18 @@ hr.articleDivider {
 #top #navContainer #nav ul li a {
   text-decoration: none;
 }
-#content {
+.stringToken,
+.stringToken a {
+  color: #43DF4B;
+}
+@media (prefers-color-scheme: dark) {
+  .stringToken,
+  .stringToken a {
+    color: #43C34A;
+  }
+}
+#content,
+#footer {
   font-size: 1.2em;
   margin: auto;
   max-width: 640px;
@@ -791,10 +796,20 @@ hr.articleDivider {
   padding-right: 2em;
 }
 @media (max-width: 500px) {
-  #content {
+  #content,
+  #footer {
     padding-left: 1em;
     padding-right: 1em;
     overflow: auto;
+  }
+}
+#footer-wrapper {
+  background-color: #002b36;
+  border-top: 2px solid black;
+}
+@media (prefers-color-scheme: dark) {
+  #footer-wrapper {
+    border-top-width: 1px;
   }
 }
 .article {
@@ -879,13 +894,33 @@ hr.articleDivider {
 #copyright {
   margin: 1em auto;
   text-align: center;
-  color: #999999;
+  color: #73b5ff;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 400;
+  padding-bottom: 2em;
+}
+#copyright .stringToken {
+  color: #1ba122;
+}
+@media (prefers-color-scheme: dark) {
+  #copyright .stringToken {
+    color: #47894a;
+  }
 }
 .pagination {
   content: '';
   display: table;
-  margin: 1em 0;
+  margin: 1em -1em;
   width: 100%;
+  border: 1px solid black;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  background-color: #13334A;
+}
+@media (min-width: 500px) {
+  .pagination {
+    border-radius: 1em;
+  }
 }
 .pagination .previousPage {
   float: right;
@@ -918,8 +953,8 @@ iframe.twitter-tweet {
   border-radius: 1em;
   padding: 1em;
   padding-top: 0.7em;
-  width: 66%;
   background-color: #f7f7f7;
+  max-width: 426.66666667px;
 }
 @media (prefers-color-scheme: dark) {
   .micro.article {
@@ -936,6 +971,11 @@ iframe.twitter-tweet {
   border-radius: 0.7em;
   padding-left: 0.5em;
   padding-right: 0.5em;
+}
+@media (prefers-color-scheme: dark) {
+  .micro.article .type {
+    background-color: #2b2b2b;
+  }
 }
 .micro.article p:first-child {
   margin-top: 0;

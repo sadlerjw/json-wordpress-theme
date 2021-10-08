@@ -1,5 +1,6 @@
 <?php get_header() ?>
 
+<div id="content-wrapper">
 <div id="content" class="h-feed">
 
 <?php
@@ -9,7 +10,11 @@ if (have_posts()): while (have_posts()): the_post();
 <?php
 endwhile; endif;
 ?>
+</div>
+</div>
 
+<div id="footer-wrapper">
+<div id="footer">
 <div class="pagination">
 	<?php
 		global $paged, $wp_query;
@@ -30,7 +35,6 @@ endwhile; endif;
 	?>
 </div>
 
-</div>
-
 <?php get_footer() ?>
-
+</div>
+</div>
