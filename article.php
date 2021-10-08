@@ -16,8 +16,11 @@ $hasTitle = isset( $post->post_title ) && strlen($post->post_title) > 0;
 			<h5 class="date"><time class="dt-published" datetime="<?= get_the_date('c'); ?>"><?php the_date(); ?></time></h5>
 			<?php endif; ?>
 		</div>
+	<?php else: ?>
+		<div class="type">
+			micropost
+		</div>
 	<?php endif; ?>
-
 <div class="e-content">
 <?php the_content(); ?>
 </div>

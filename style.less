@@ -535,12 +535,42 @@ iframe.twitter-tweet {
     }
 
     .date {
-        margin-top: -1.5em;
-        padding-left: 1em;
+        margin-top: -0.5em;
+        // padding-left: 1em;
         font-size: 0.8em;
 
-        .dt-published:before {
-            content: '— ';
+        // .dt-published:before {
+        //     content: '— ';
+        // }
+    }
+    &.article {
+        border: 1px solid @codeSelectedBackgroundColor;
+        border-radius: 1em;
+        padding: 1em;
+        padding-top: 0.7em;
+        width: 66%;
+        background-color: darken(white, 3%);
+
+        @media (prefers-color-scheme: dark) {
+            // border-color: desaturate(darken(@linkColor, 5%), 80%);
+            background-color: lighten(@darkModeBackgroundColor, 3%);
+        }
+
+        .type {
+            font-variant: small-caps;
+            font-size: 0.7em;
+            font-weight: bold;
+            display: none;
+
+            background-color: lighten(@darkModeBackgroundColor, 65%);
+            color: #666;
+            border-radius: 0.7em;
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+        }
+
+        p:first-child {
+            margin-top: 0;
         }
     }
 }

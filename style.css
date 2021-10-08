@@ -910,12 +910,35 @@ iframe.twitter-tweet {
   display: none;
 }
 .micro .date {
-  margin-top: -1.5em;
-  padding-left: 1em;
+  margin-top: -0.5em;
   font-size: 0.8em;
 }
-.micro .date .dt-published:before {
-  content: '— ';
+.micro.article {
+  border: 1px solid #13334A;
+  border-radius: 1em;
+  padding: 1em;
+  padding-top: 0.7em;
+  width: 66%;
+  background-color: #f7f7f7;
+}
+@media (prefers-color-scheme: dark) {
+  .micro.article {
+    background-color: #3b3b3b;
+  }
+}
+.micro.article .type {
+  font-variant: small-caps;
+  font-size: 0.7em;
+  font-weight: bold;
+  display: none;
+  background-color: #d9d9d9;
+  color: #666;
+  border-radius: 0.7em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+.micro.article p:first-child {
+  margin-top: 0;
 }
 .syn-text,
 .relsyn {
