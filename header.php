@@ -22,7 +22,7 @@
 					<span class="stringToken">"author"</span>&nbsp;&nbsp;&nbsp;: <span class="stringToken">"<span class="fn">Jason Sadler</span>"</span>,
 				</div>
 				<div class="codeLine indent1">
-					<span class="stringToken">"twitter"</span>&nbsp;&nbsp;: <span class="stringToken">"<a href="https://twitter.com/sadlerjw" class="url">@sadlerjw"</a></span>,
+					<span class="stringToken">"mastodon"</span>&nbsp;: <span class="stringToken">"<a href="https://micro.sadlerjw.com/@json" class="url">@json@micro.sadlerjw.com"</a></span>,
 				</div>
 				<div class="codeLine indent1">
 					<span class="stringToken">"linkedin"</span>:    <span class="stringToken">"<a href="https://ca.linkedin.com/in/sadlerjw" class="url">ca.linkedin.com/in/sadlerjw</a>"</span>,
